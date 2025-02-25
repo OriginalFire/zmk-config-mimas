@@ -1,17 +1,17 @@
 # Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_TOTEM_LEFT
+if SHIELD_MIMAS_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "TOTEM"
+    default "MIMAS"
     
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
 
-if SHIELD_TOTEM_LEFT || SHIELD_TOTEM_RIGHT
+if SHIELD_MIMAS_LEFT || SHIELD_MIMAS_RIGHT
 
 config ZMK_SPLIT
     default y
