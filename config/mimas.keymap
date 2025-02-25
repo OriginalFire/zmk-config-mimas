@@ -9,6 +9,17 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
 
+// Short versions
+#define RGBON   &rgb_ug RGB_ON
+#define RGBOFF  &rgb_ug RGB_OFF
+#define RGBTOG  &rgb_ug RGB_TOG
+#define RGBHUI  &rgb_ug RGB_HUI
+#define RGBHUD  &rgb_ug RGB_HUD
+#define RGBSAI  &rgb_ug RGB_SAI
+#define RGBSAD  &rgb_ug RGB_SAD
+#define RGBBRI  &rgb_ug RGB_BRI
+#define RGBBRD  &rgb_ug RGB_BRD
+#define RGBEFF  &rgb_ug RGB_EFF
 
 
 /*
