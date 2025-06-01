@@ -6,13 +6,26 @@
 
 #include "mimas.dtsi"
 
-&kscan0 {
-    col-gpios
-        = <&gpio1 6  GPIO_ACTIVE_HIGH>
-        , <&gpio1 4  GPIO_ACTIVE_HIGH>
-        , <&gpio0 11 GPIO_ACTIVE_HIGH>
-        , <&gpio1 0  GPIO_ACTIVE_HIGH>
-        , <&gpio0 24 GPIO_ACTIVE_HIGH>
-        , <&gpio0 22 GPIO_ACTIVE_HIGH>
-        ;
+/ { // The root node is often implicitly added by `include`, but being explicit is good
+    kscan0: kscan_0 {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "KSCAN";
+        diode-direction = "col2row"; // IMPORTANT: Verify this with your actual diode direction
+
+        // *** THESE PINS MUST BE UNIQUE TO EACH OTHER ON THIS HALF ***
+        row-gpios
+            = <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // <--- THIS PIN (P0.10)
+            , <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+        col-gpios
+            = <&gpio1 6  GPIO_ACTIVE_HIGH>
+            , <&gpio1 4  GPIO_ACTIVE_HIGH>
+            , <&gpio0 11 GPIO_ACTIVE_HIGH> // <--- CONFLICT: THIS PIN (P0.11) CANNOT BE USED IF P0.10 IS A ROW.
+            , <&gpio1 0  GPIO_ACTIVE_HIGH>
+            , <&gpio0 24 GPIO_ACTIVE_HIGH>
+            , <&gpio0 22 GPIO_ACTIVE_HIGH>
+            ;
+    };
 };
