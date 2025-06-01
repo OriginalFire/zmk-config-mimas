@@ -3,16 +3,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-&slotted {
-    bt_clear_key {
-        label = "BT CLR";
-        bindings = <&bt_clear>;
-    };
-    bt_pair_key {
-        label = "BT PR";
-        bindings = <&bt_pair>;
-    };
-};
 
 / {
      
@@ -48,7 +38,7 @@ display-name = "Base"                      ;
                 &none       &none       &none       &none       &none       &none           &none       &none       &none       &none       &none       &none
                 &none       &none       &none       &none       &none       &none           &none       &none       &none       &none       &none       &none
                 &none       &none       &none       &none       &none       &none           &none       &none       &none       &none       &none       &none
-                                &none       &none       &bt_pair   &bt_clear   &none       &none       &none       &none
+                                &none       &none       &bt BT_CLR   &none   &none       &none       &none       &none
             >;
         }; 
         };
