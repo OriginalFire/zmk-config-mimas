@@ -74,7 +74,7 @@ display-name = "nav"                      ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-    &trans   &trans      &trans      &trans      &trans      &trans          &trans      &trans      &kp UP      &trans      &trans      &trans
+    &ESC     &trans      &trans      &trans      &trans      &trans          &trans      &trans      &kp UP      &trans      &trans      &trans
     &trans   &transL    &trans      &trans    &trans    &trans       &trans   &kp LEFT    &kp DOWN    &kp RIGHT    &trans    &trans
     &trans    &trans    &trans    &trans    &trans    &trans           &trans       &trans   &trans   &trans    &trans   &trans
                             &trans    &kp LCTRL   &kp SPACE                               &kp ENTER   &kp C_VOL_DN &kp C_VOL_UP   
